@@ -16,14 +16,10 @@ function paintToDos(text, id){
 }
 
 function deleteTodos(event){
-    const toDeleteID = event.path[1].id;
-    const toDeleteEl = document.getElementById(String(toDeleteID)); // 삭제될 요소 선택
-    toDeleteEl.remove();
-
-
-    todoListArray = todoListArray.filter(element => element.id !== Number(toDeleteID));
-    saveToDos(todoListArray);
-
+    const li = event.target.parentElement;
+    li.remove();
+    todoListArray = todoListArray.filter(element => element.id !== Number(li.id));
+    saveToDos();
 }
 
 function handleToDoSubmit(event){
@@ -35,13 +31,13 @@ function handleToDoSubmit(event){
 
     todoListArray.push(todo);
 
-    saveToDos(todoListArray);
+    saveToDos();
     paintToDos(todoInput.value, todo.id);
 
 }
 
-function saveToDos(array){
-    localStorage.setItem('todos', JSON.stringify(array));
+function saveToDos(){
+    localStorage.setItem('todos', JSON.stringify(todoListArray));
 }
 
 
