@@ -6,35 +6,122 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
     <link rel="stylesheet" href="./style.css">
     <title>Momentum App</title>
 </head>
 
 <body>
-    <form id="login-form" class="hidden">
-        <input required maxlength="15" type="text" placeholder="What is your name?">
-        <button>Log In</button>
-    </form>
 
-    <h2 id="clock">00:00:00</h2>
+    <div class="container-page">
 
-    <h1 id="greeting" class="hidden"></h1>
+        <header>
+            <div class="column-left">
+                <div class="links">Links</div>
+                <div class="google-search">
+                    <div class="material-icons">search</div>
 
-    <form id="todo-form">
-        <input required type="text" placeholder="Write a To Do and Press Enter" />
-    </form>
-    <ul id="todo-list"></ul>
+                    <form action="https://www.google.com/search" class="searchform" method="get" name="searchform"
+                        target="_blank">
+                        <input name="sitesearch" type="hidden">
+                        <input autocomplete="on" class="form-control search" name="q"
+                            placeholder="Search in example.com" required="required" type="text">
+                    </form>
 
+                    <i class="fab fa-google"></i>
+                </div>
+            </div>
 
-    <div class="quote">
-        <span></span>
-        <span></span>
-    </div>
+            <div class="column-right">
+                <div class="add-btn">
+                    <div class="material-icons">add_circle_outline</div>
+                    <span>Add</span>
+                </div>
 
+                <div id="weather">
+                    <div class="icon"></div>
 
-    <div id="weather">
-        <span></span>
-        <span></span>
+                    <div class="info">
+                        <div id="info__temp">
+                            <span id="temp__num">loading...</span>
+                            <span id="temp__degree">°</span>
+                        </div>
+
+                        <span id="info__city">loading...</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="clock-greeting">
+            <h1 id="clock"></h1>
+            <h2 id="greeting">Hello, What's your name?</h2>
+            <form id="login-form" class="hidden">
+                <input required maxlength="15" type="text">
+            </form>
+        </section>
+
+        <section class="main-foucs">
+            <h3 id="question">What is your focus for today?</h3>
+            <form class="todo-form">
+                <input minlength="1" type="text">
+            </form>
+        </section>
+
+        <footer>
+            <div class="column-left">
+                <div class="material-icons">settings</div>
+                <div class="info">
+                    <div class="info__location">North Bend, WA, USA</div>
+                    <div class="info__source">John Westrock/Unsplash</div>
+                </div>
+            </div>
+
+            <div class="column-center">
+                <div class="quote">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="column-right">
+                <div class="todo">Todo</div>
+
+                <div id="pop-up">
+                    <div class="pop-up__header">
+                        <div class="column-left">
+                            <span>Inbox</span>
+                            <span class="material-icons">expand_more</span>
+                        </div>
+                        <div class="column-right">
+                            <span class="material-icons">more_horiz</span>
+                        </div>
+                    </div>
+
+                    <div class="initial__content">
+                        <div class="mini-greetings">Add a todo to get started</div>
+                        <div class="switch-btn">
+                            <span>Swith to Today</span>
+                            <span class="material-icons">keyboard_arrow_right</span>
+                        </div>
+
+                        <div class="new-btn">New Todo</div>
+                    </div>
+
+                    <ul class="todo-list">
+
+                    </ul>
+
+                    <form class="todo-form">
+                        <input minlength="1" type="text" placeholder="New Todo">
+                    </form>
+
+                </div>
+
+            </div>
+        </footer>
+
     </div>
 
     <script src="./js/weather.js"></script>
