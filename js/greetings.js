@@ -2,7 +2,7 @@ const loginForm = document.querySelector('#login-form');
 const loginInput = document.querySelector('#login-form input');
 const greeting = document.querySelector('#greeting');
 
-
+// main-focus 
 const focusAnswer = document.querySelector('#answer')
 const mainFocus = document.querySelector('.focus--main');
 const mainFocusInput = document.querySelector('.focus--main input');
@@ -29,7 +29,7 @@ function onMainFocusSubmit(event){
 }
 
 function paintGreetings(username){
-    //greeting.classList.remove('hidden');
+    greeting.classList.add('more');
     greeting.innerHTML = `Hello! ${username}`;
 }
 

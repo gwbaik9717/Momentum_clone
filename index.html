@@ -77,7 +77,7 @@
                 </form>
             </section>
 
-            <section class="focus focus--today hidden">
+            <section class="focus focus--today hidden more">
                 <h4 id="today">today</h4>
                 <span></span>
             </section>
@@ -104,7 +104,7 @@
                 <div class="todo">Todo</div>
 
                 <div id="pop-up" class="hidden">
-                    <div class="pop-up__header">
+                    <div id="pop-up__header">
                         <div class="column-left">
                             <span>Inbox</span>
                             <span class="material-icons">expand_more</span>
@@ -114,22 +114,18 @@
                         </div>
                     </div>
 
-                    <div class="initial__content">
+                    <div id="pop-up__content">
                         <div class="mini-greetings">Add a todo to get started</div>
                         <div class="switch-btn">
                             <span>Swith to Today</span>
                             <span class="material-icons">keyboard_arrow_right</span>
                         </div>
-
-                        <div class="new-btn">New Todo</div>
                     </div>
 
-                    <ul class="todo-list">
+                    <ul id="todo-list"></ul>
 
-                    </ul>
-
-                    <form class="todo-form">
-                        <input minlength="1" type="text" placeholder="New Todo">
+                    <form id="todo-form">
+                        <input minlength="1" maxlength="30" type="text" placeholder="New Todo">
                     </form>
 
                 </div>
