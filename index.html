@@ -14,22 +14,28 @@
 
 <body>
 
-    <div class="container-page">
+    <div class="container">
 
         <header>
             <div class="column-left">
                 <div class="links">Links</div>
                 <div class="google-search">
-                    <div class="material-icons">search</div>
 
                     <form action="https://www.google.com/search" class="searchform" method="get" name="searchform"
                         target="_blank">
-                        <input name="sitesearch" type="hidden">
-                        <input autocomplete="on" class="form-control search" name="q"
-                            placeholder="Search in example.com" required="required" type="text">
+                        <div class="material-icons">search</div>
+                        <div class="search-box">
+                            <input autocomplete="on" class="form-control search" name="q" required="required"
+                                type="text">
+                            <div class="border-bottom"></div>
+                            <i class="fab fa-google fa-lg"></i>
+                        </div>
+
+
+
                     </form>
 
-                    <i class="fab fa-google"></i>
+
                 </div>
             </div>
 
@@ -44,8 +50,8 @@
 
                     <div class="info">
                         <div id="info__temp">
-                            <span id="temp__num">loading...</span>
-                            <span id="temp__degree">°</span>
+                            <span>-2</span>
+                            <span>°</span>
                         </div>
 
                         <span id="info__city">loading...</span>
@@ -54,23 +60,27 @@
             </div>
         </header>
 
-        <section class="clock-greeting">
-            <h1 id="clock"></h1>
-            <h2 id="greeting">Hello, What's your name?</h2>
-            <form id="login-form" class="hidden">
-                <input required maxlength="15" type="text">
-            </form>
-        </section>
+        <div class="container-center">
+            <section class="clock-greeting">
+                <h1 id="clock"></h1>
+                <h2 id="greeting">Hello, What's your name?</h2>
+                <form id="login-form">
+                    <h2 id="login-question">Hello, What's your name?</h2>
+                    <input required maxlength="15" type="text">
+                </form>
+            </section>
 
-        <section class="main-foucs">
-            <h3 id="question">What is your focus for today?</h3>
-            <form class="todo-form">
-                <input minlength="1" type="text">
-            </form>
-        </section>
+            <section class="main-focus">
+                <h3 id="question">What is your focus for today?</h3>
+                <form class="todo-form">
+                    <input minlength="1" type="text">
+                </form>
+            </section>
+        </div>
+
 
         <footer>
-            <div class="column-left">
+            <div class="column column--left">
                 <div class="material-icons">settings</div>
                 <div class="info">
                     <div class="info__location">North Bend, WA, USA</div>
@@ -78,17 +88,17 @@
                 </div>
             </div>
 
-            <div class="column-center">
+            <div class="column column--center">
                 <div class="quote">
-                    <span></span>
-                    <span></span>
+                    <span id="saying"></span>
+                    <span id="author" class="hidden"></span>
                 </div>
             </div>
 
-            <div class="column-right">
+            <div class="column column--right">
                 <div class="todo">Todo</div>
 
-                <div id="pop-up">
+                <div id="pop-up" class="hidden">
                     <div class="pop-up__header">
                         <div class="column-left">
                             <span>Inbox</span>
