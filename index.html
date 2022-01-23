@@ -62,19 +62,24 @@
 
         <div class="container-center">
             <section class="clock-greeting">
-                <h1 id="clock"></h1>
+                <h1 id="clock" class="hidden"></h1>
                 <h2 id="greeting">Hello, What's your name?</h2>
-                <form id="login-form">
-                    <h2 id="login-question">Hello, What's your name?</h2>
+
+                <form id="login-form" class="hidden">
                     <input required maxlength="15" type="text">
                 </form>
             </section>
 
-            <section class="main-focus">
+            <section class="focus focus--main hidden">
                 <h3 id="question">What is your focus for today?</h3>
-                <form class="todo-form">
+                <form id="answer">
                     <input minlength="1" type="text">
                 </form>
+            </section>
+
+            <section class="focus focus--today hidden">
+                <h4 id="today">today</h4>
+                <span></span>
             </section>
         </div>
 
