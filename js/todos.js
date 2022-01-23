@@ -39,7 +39,6 @@ function deleteTodos(event){
     li.remove();
     todoListArray = todoListArray.filter(element => element.id !== Number(li.id));
     saveToDos();
-    console.log(savedToDos);
     if(todoListArray.length === 0){
         paintDefault();
     }

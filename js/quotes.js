@@ -45,6 +45,7 @@ const quotes = [
     },
   ];
 
+const quoteEl = document.querySelector('.quote');
 const quote = document.querySelector('.quote span:first-child');
 const author = document.querySelector('.quote span:last-child');
 
@@ -53,4 +54,14 @@ const randomNum = Math.floor(Math.random() * quotes.length);
 quote.innerText = quotes[randomNum].quote;
 author.innerText = quotes[randomNum].author;
 
+function detailsOn(){
+  author.classList.remove('hidden');
+}
+
+function detailsOff(){
+  author.classList.add('hidden');
+}
+
+quoteEl.addEventListener('mouseover', detailsOn);
+quoteEl.addEventListener('mouseout', detailsOff);
 

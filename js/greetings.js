@@ -1,6 +1,8 @@
 const loginForm = document.querySelector('#login-form');
 const loginInput = document.querySelector('#login-form input');
 const greeting = document.querySelector('#greeting');
+const header = document.querySelector('header');
+const footer = document.querySelector('footer');
 
 // main-focus 
 const focusAnswer = document.querySelector('#answer')
@@ -19,6 +21,8 @@ function onLoginSubmit(event){
     localStorage.setItem('username', username); 
     paintClock();
     paintMainFocus();
+    header.classList.remove('hidden');
+    footer.classList.remove('hidden');
 }
 
 function onMainFocusSubmit(event){
@@ -26,11 +30,19 @@ function onMainFocusSubmit(event){
     todayFocusList.innerHTML = mainFocusInput.value;
     mainFocus.classList.add('hidden');
     todayFocus.classList.remove('hidden');
+    
 }
 
 function paintGreetings(username){
-    greeting.classList.add('more');
-    greeting.innerHTML = `Hello! ${username}`;
+    //시간대별 멘트
+    const hour = new Date().getHours();
+    if(hour>=21){
+        greeting.innerHTML = `Good Night, ${username}`;
+    }else if(hour<11){
+        greeting.innerHTML = `Good Morning ${username}`;
+    }else{
+        greeting.innerHTML = `Good Afternoon! ${username}`;
+    }
 }
 
 function paintClock(){
@@ -42,12 +54,14 @@ function paintMainFocus(){
 }
 
 
-
 const savedUsername = localStorage.getItem(USERNAME_KEY);
 
 if(savedUsername === null){
     loginForm.classList.remove('hidden');
     loginForm.addEventListener('submit', onLoginSubmit);
+    header.classList.add('hidden');
+    footer.classList.add('hidden');
+    
 }else{
     paintGreetings(savedUsername);
     paintClock();
