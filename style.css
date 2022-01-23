@@ -36,21 +36,7 @@ body {
 }
 
 
-/*.container::before {
-    background-color: rgba(0, 0, 0, .8);
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 100%;
-    height: 100vh;
-    content: "";
-    z-index: 0;
-
-}*/
-
 .container {
-    background-image: url(./images/img4.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -69,6 +55,7 @@ header {
     align-items: center;
     padding: 0 20px;
     box-sizing: border-box;
+
 }
 
 header .column-left {
@@ -142,12 +129,15 @@ header .column-right .add-btn {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-right: 15px;
+
 }
 
 header .column-right .add-btn .material-icons {
     height: 21px;
     font-weight: 400;
     margin-bottom: 4px;
+
 }
 
 header .column-right .add-btn span {
@@ -158,9 +148,18 @@ header .column-right .add-btn span {
     opacity: .85;
 }
 
-#weather {}
+#weather {
+    display: flex;
 
-#weather .icon {}
+}
+
+#weather .material-icons {
+    font-weight: 400;
+    text-align: center;
+    width: 26px;
+    margin-right: 10px;
+
+}
 
 #weather .info {
     display: flex;
@@ -168,13 +167,18 @@ header .column-right .add-btn span {
     align-items: center;
 }
 
-#info__temp {}
+#info__temp {
+    font-size: 1.625rem;
+    font-weight: 400;
+}
 
-#info__temp span:first-child {}
-
-#info__temp span:last-child {}
-
-#info__city {}
+#info__city {
+    font-size: 13px;
+    opacity: .85;
+    line-height: 15.6px;
+    overflow-wrap: break-word;
+    cursor: pointer;
+}
 
 /* CONTAINER-CENTER */
 .container-center {
@@ -462,8 +466,7 @@ footer .column.column--right .todo {
     transition: opacity .2s ease;
     display: flex;
     align-items: center;
-    min-height: 50px;
-
+    min-height: 40px;
 }
 
 #todo-list li::before,
@@ -475,7 +478,7 @@ footer .column.column--right .todo {
 
 #todo-list li span {
     max-width: 70%;
-    overflow: scroll;
+    word-wrap: break-word;
 }
 
 #todo-list input {
